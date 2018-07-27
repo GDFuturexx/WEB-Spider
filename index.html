@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>骰子魔方</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			.main {
+				perspective: 1000px;
+				transform-style: preserve-3d;
+			}
+			
+			.mofang {
+				width: 200px;
+				height: 200px;
+				margin: 200px auto;
+				position: relative;
+				transition: all 5s;
+				transform-style: preserve-3d;
+			}
+			
+			.mofang div {
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0.8;
+				border: 1px solid #ccc;
+				transition: all 5s;
+			}
+			
+			.num {
+				text-align: center;
+				font-size: 150px;
+				font-family: "微软雅黑";
+				color: white;
+				text-shadow: 10px 10px 10px #444, 10px 10px 20px #777, 10px 10px 30px #aaa, 10px 10px 40px #ccc;
+			}
+			
+			.front {
+				background: lightskyblue;
+				transform: translateZ(100px);
+			}
+			
+			.back {
+				background: yellowgreen;
+				transform: rotateY(180deg) translateZ(100px);
+			}
+			
+			.left {
+				background: palevioletred;
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			
+			.right {
+				background: dimgrey;
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			
+			.top {
+				background: peru;
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			
+			.bottom {
+				background: salmon;
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			
+			.main:hover .mofang {
+				transform: rotate3d(-1, 1, -1, 360deg) scale3d(1.5, 1.5, 1.5);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="mofang num">
+				<div class="front">D</div>
+				<div class="back">么</div>
+				<div class="left">J</div>
+				<div class="right">么</div>
+				<div class="top">X</div>
+				<div class="bottom">哒</div>
+			</div>
+		</div>
+	</body>
+
+</html>
